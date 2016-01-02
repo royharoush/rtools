@@ -28,3 +28,6 @@
 [submodule "tools/mpc"]
 	path = tools/mpc
 	url = https://github.com/g0tmi1k/mpc.git
+[submodule "tools/veil"]
+	path = tools/veil
+	url = https://github.com/Veil-Framework/Veil.git
