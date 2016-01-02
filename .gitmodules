@@ -1,3 +1,6 @@
 [submodule "tools/Sn1per"]
 	path = tools/Sn1per
 	url = https://github.com/1N3/Sn1per.git
+[submodule "tools/nanomet"]
+	path = tools/nanomet
+	url = https://github.com/kost/nanomet.git
