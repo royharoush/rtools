@@ -19,3 +19,9 @@
 [submodule "tools/shodan-search"]
 	path = tools/shodan-search
 	url = https://github.com/DanMcInerney/shodan-search.git
+[submodule "tools/social-engineer-toolkit"]
+	path = tools/social-engineer-toolkit
+	url = https://github.com/trustedsec/social-engineer-toolkit.git
+[submodule "tools/nikto"]
+	path = tools/nikto
+	url = https://github.com/sullo/nikto.git
