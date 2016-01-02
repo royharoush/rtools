@@ -1,0 +1,3 @@
+[submodule "tools/Sn1per"]
+	path = tools/Sn1per
+	url = https://github.com/1N3/Sn1per.git
