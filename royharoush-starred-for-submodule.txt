@@ -1,0 +1,190 @@
+############## win_penetration     ### :no_pedestrians: penetration testing on windows(7 or 8) 
+git clone https://github.com/nekocode/win_penetration.git
+############## p0wnedShell     ### PowerShell Runspace Post Exploitation Toolkit
+git clone https://github.com/Cn33liz/p0wnedShell.git
+############## powercat     ### netshell features all in version 2 powershell
+git clone https://github.com/besimorhino/powercat.git
+############## dnsrecon     ### DNS Enumeration Script
+git clone https://github.com/darkoperator/dnsrecon.git
+############## Meterpreter-Scripts     ### Meterpreter Scripts that I'm working on
+git clone https://github.com/darkoperator/Meterpreter-Scripts.git
+############## security-cheatsheets     ### A collection of cheatsheets for various infosec tools and topics.
+git clone https://github.com/royharoush/security-cheatsheets.git
+############## gitlist     ### 
+git clone https://github.com/macubergeek/gitlist.git
+############## discover     ### For use with Kali Linux. Custom bash scripts used to automate various pentesting tasks.
+git clone https://github.com/leebaird/discover.git
+############## Scripts     ### Useful Scripts
+git clone https://github.com/jshaw87/Scripts.git
+############## pentestpackage     ### a package of Pentest scripts I have made or  commonly use
+git clone https://github.com/leonteale/pentestpackage.git
+############## sparta     ### Network Infrastructure Penetration Testing Tool
+git clone https://github.com/SECFORCE/sparta.git
+############## PowerTools     ### PowerTools is a collection of PowerShell projects with a focus on offensive operations.
+git clone https://github.com/PowerShellEmpire/PowerTools.git
+############## nishang     ### Nishang - PowerShell for penetration testing and offensive security. 
+git clone https://github.com/samratashok/nishang.git
+############## nkis     ### New Kali Installation Script
+git clone https://github.com/machaith/nkis.git
+############## Sublist3r     ### Fast subdomains enumeration tool for penetration testers
+git clone https://github.com/aboul3la/Sublist3r.git
+############## MSF-Addons     ### Modules Scripts, Plugins for the Metasploit Framework,
+git clone https://github.com/v-p-b/MSF-Addons.git
+############## Metasploit-Plugins     ### Plugins for Metasploit Framework
+git clone https://github.com/darkoperator/Metasploit-Plugins.git
+############## tools     ### security and hacking tools exploits, proof of concepts, shellcodes, scripts,
+git clone https://github.com/nullsecuritynet/tools.git
+############## oscp     ### scripts for my oscp study
+git clone https://github.com/wg135/oscp.git
+############## BinGoo     ### BinGoo! A Linux bash based Bing and Google Dorking Tool
+git clone https://github.com/Hood3dRob1n/BinGoo.git
+############## Kalista     ### A Kali Linux Tool to assist with security audits and pentesting. Lots of wrappers for commonly used tools to help extend their usefulness while making a lot of the experience easy on the user. 
+git clone https://github.com/Hood3dRob1n/Kalista.git
+############## cheats     ### cheats allows you to create interactive cheat sheets for the command line.
+git clone https://github.com/lucaswerkmeister/cheats.git
+############## cheat     ### A Bash reimplementation of Chris Lane's cheat sheet script
+git clone https://github.com/jahendrie/cheat.git
+############## cheat     ### Cheatsheets for command line because, you know, life is too short to read manpages.,
+git clone https://github.com/dufferzafar/cheat.git
+############## teenage-mutant-ninja-turtles     ### Automatically exported from code.google.com/p/teenage-mutant-ninja-turtles
+git clone https://github.com/royharoush/teenage-mutant-ninja-turtles.git
+############## Nosql-Exploitation-Framework     ### A Python Framework For NoSQL Scanning and Exploitation 
+git clone https://github.com/torque59/Nosql-Exploitation-Framework.git
+############## fuzzdb     ### Official FuzzDB project repository
+git clone https://github.com/fuzzdb-project/fuzzdb.git
+############## security-cheatsheets     ### A collection of cheatsheets for various infosec tools and topics.
+git clone https://github.com/andrewjkerr/security-cheatsheets.git
+############## pentools     ### miscellaneous handy pentesting tools
+git clone https://github.com/rossja/pentools.git
+############## tools     ### scripts for pentesting
+git clone https://github.com/curesec/tools.git
+############## Cheatsheets     ### Penetration Testing/Security Cheatsheets
+git clone https://github.com/jshaw87/Cheatsheets.git
+############## peinjector     ### peinjector - MITM PE file infector
+git clone https://github.com/JonDoNym/peinjector.git
+############## OWASP-Testing-Checklist     ### OWASP based Web Application Security Testing Checklist is an Excel based checklist which helps you to track the status of completed and pending test cases.
+git clone https://github.com/tanprathan/OWASP-Testing-Checklist.git
+############## OWASP-Testing-Checklist     ### OWASP based Web Application Security Testing Checklist is an Excel based checklist which helps you to track the status of completed and pending test cases.
+git clone https://github.com/liorvh/OWASP-Testing-Checklist.git
+############## autopwn     ### Specify targets and run sets of tools against them
+git clone https://github.com/nccgroup/autopwn.git
+############## cheat     ### cheat allows you to create and view interactive cheatsheets on the command-line. It was designed to help remind *nix system administrators of options for commands that they use frequently but not frequently enough to remember.,
+git clone https://github.com/chrisallenlane/cheat.git
+############## weeman     ### :tropical_fish: HTTP Server for phishing in Python
+git clone https://github.com/Hypsurus/weeman.git
+############## linkedin-scraper     ### Scrapes the  public profile of the linkedin page
+git clone https://github.com/yatish27/linkedin-scraper.git
+############## rext     ### Router EXploitation Toolkit - small toolkit for easy creation and usage of various python scripts that work with embedded devices.
+git clone https://github.com/j91321/rext.git
+############## in-hackers-mind     ### Cyber Security: In Hacker's Mind
+git clone https://github.com/Octosec/in-hackers-mind.git
+############## tap     ### The TrustedSec Attack Platform is a reliable method for droppers on an infrastructure in order to ensure established connections to an organization.
+git clone https://github.com/trustedsec/tap.git
+############## DocDropper     ### REB00T Spear Phishing
+git clone https://github.com/tfairane/DocDropper.git
+############## WebAppSec     ### Web Application Security
+git clone https://github.com/ajinabraham/WebAppSec.git
+############## Egress-Assess     ### Egress-Assess is a tool used to test egress data detection capabilities
+git clone https://github.com/ChrisTruncer/Egress-Assess.git
+############## pwnbin     ### Python Pastebin Webcrawler that returns list of public pastebins containing keywords
+git clone https://github.com/kahunalu/pwnbin.git
+############## splinter     ### splinter - python test framework for web applications 
+git clone https://github.com/cobrateam/splinter.git
+############## masscan-web-ui     ### MASSCAN Web UI
+git clone https://github.com/offensive-security/masscan-web-ui.git
+############## CheatSheets     ### Cheat sheets for various projects.
+git clone https://github.com/HarmJ0y/CheatSheets.git
+############## web-malware-collection     ### Clone of svn repository of http://insecurety.net/projects/web-malware/ project
+git clone https://github.com/liorvh/web-malware-collection.git
+############## ctf-tools     ### Some setup scripts for security research tools.
+git clone https://github.com/zardus/ctf-tools.git
+############## ptf     ### The Penetration Testers Framework (PTF) is a way for modular support for up-to-date tools.
+git clone https://github.com/trustedsec/ptf.git
+############## commix     ### Automated All-in-One OS Command Injection and Exploitation Tool
+git clone https://github.com/stasinopoulos/commix.git
+############## github-coup     ### Clone or Update Your User and Starred Repos
+git clone https://github.com/m42e/github-coup.git
+############## pentest-bookmarks     ### a collection of handy bookmarks
+git clone https://github.com/jhaddix/pentest-bookmarks.git
+############## tbhm     ### The Bug Hunters Methodology
+git clone https://github.com/jhaddix/tbhm.git
+############## metasploitavevasion     ### Metasploit AV Evasion Tool
+git clone https://github.com/nccgroup/metasploitavevasion.git
+############## TinyMet     ### A \tiny\ meterpreter stager
+git clone https://github.com/SherifEldeeb/TinyMet.git
+############## undetected-meterpreter-stagers     ### Custom stagers with python encrypting proxy
+git clone https://github.com/DiabloHorn/undetected-meterpreter-stagers.git
+############## metasploit-framework     ### Metasploit Framework
+git clone https://github.com/rapid7/metasploit-framework.git
+############## inmet     ### A multi-purpose meterpreter executable (inline many transports, msfpayload),
+git clone https://github.com/SherifEldeeb/inmet.git
+############## metasploit-loader     ### A client compatible with Metasploit's staging protocol
+git clone https://github.com/rsmudge/metasploit-loader.git
+############## mpc     ### Msfvenom Payload Creator (MPC)
+git clone https://github.com/g0tmi1k/mpc.git
+############## cortana     ### This is a pack of Cortana scripts commonly used on our pentests.
+git clone https://github.com/HarmJ0y/cortana.git
+############## cortana-scripts     ### A collection of Cortana scripts that you may use with Armitage and Cobalt Strike.
+git clone https://github.com/rsmudge/cortana-scripts.git
+############## Generate-Macro     ### This Powershell script will generate a malicious Microsoft Office document with a specified payload and persistence method.
+git clone https://github.com/enigma0x3/Generate-Macro.git
+############## Empire     ### Empire is a pure PowerShell post-exploitation agent.
+git clone https://github.com/PowerShellEmpire/Empire.git
+############## post-exploitation-wiki     ### Post Exploitation Wiki
+git clone https://github.com/mubix/post-exploitation-wiki.git
+############## pth-toolkit     ### Modified version of the passing-the-hash tool collection (https://code.google.com/p/passing-the-hash/) made to work straight out of the box
+git clone https://github.com/mubix/pth-toolkit.git
+############## shellshocker-pocs     ### Collection of Proof of Concepts and Potential Targets for #ShellShocker
+git clone https://github.com/mubix/shellshocker-pocs.git
+############## tools     ### Operational toolset utilizing git's submodule feature
+git clone https://github.com/mubix/tools.git
+############## pyHashcat     ### Python Wrapper for oclHashcat
+git clone https://github.com/Rich5/pyHashcat.git
+############## search-bing     ### Search bing with python
+git clone https://github.com/DanMcInerney/search-bing.git
+############## search-google     ### Scrape google search results
+git clone https://github.com/DanMcInerney/search-google.git
+############## quickscan     ### beta
+git clone https://github.com/DanMcInerney/quickscan.git
+############## fast-recon     ### Does some google dorks against a domainquickscan
+git clone https://github.com/DanMcInerney/fast-recon.git
+############## shodan-search     ### 
+git clone https://github.com/DanMcInerney/shodan-search.git
+############## CrackMapExec     ### A swiss army knife for pentesting Windows/Active Directory environments
+git clone https://github.com/DanMcInerney/CrackMapExec.git
+############## device-pharmer     ### Opens 1K+ IPs or Shodan search results and attempts to login
+git clone https://github.com/DanMcInerney/device-pharmer.git
+############## sqlmap     ### Automatic SQL injection and database takeover tool
+git clone https://github.com/sqlmapproject/sqlmap.git
+############## Shellcode     ### 
+git clone https://github.com/isislab/Shellcode.git
+############## lists     ### The definitive list of lists (of lists) curated on GitHub
+git clone https://github.com/jnv/lists.git
+############## big-list-of-naughty-strings     ### The Big List of Naughty Strings is a list of strings which have a high probability of causing issues when used as user-input data.
+git clone https://github.com/minimaxir/big-list-of-naughty-strings.git
+############## SecLists     ### SecLists is the security tester's companion. It is a collection of multiple types of lists used during security assessments. List types include usernames passwords, URLs, sensitive data grep strings, fuzzing payloads, and many more.,
+git clone https://github.com/danielmiessler/SecLists.git
+############## ddos-script     ### All  things to do after installing Kali Linux and Add more awesome hacking tools to your Kali Linux system
+git clone https://github.com/FreelancePentester/ddos-script.git
+############## Veil     ### Veil is the superproject containing all tools in the Veil-Framework
+git clone https://github.com/Veil-Framework/Veil.git
+############## PowerSploit     ### PowerSploit - A PowerShell Post-Exploitation Framework
+git clone https://github.com/PowerShellMafia/PowerSploit.git
+############## Autopeeper     ### NMAP Parser and Screenshot Tool
+git clone https://github.com/ZephrFish/Autopeeper.git
+############## Lazykali     ### hackpack to go with lazykali on menu application Kali Linux
+git clone https://github.com/bradfreda/Lazykali.git
+############## domain     ### Setup script for Regon-ng
+git clone https://github.com/jhaddix/domain.git
+############## ICScanner     ### Industrial Control Systems Network Scanner
+git clone https://github.com/0xICF/ICScanner.git
+############## infernal-twin     ### wireless hacking - This is automated wireless hacking tool
+git clone https://github.com/entropy1337/infernal-twin.git
+############## shellme     ### simple shellcode generator
+git clone https://github.com/hatRiot/shellme.git
+############## Subterfuge     ### Framework for Man-In-The-Middle attacks
+git clone https://github.com/Subterfuge-Framework/Subterfuge.git
+############## os-scripts     ### Personal Collection of Operating Systems Scripts
+git clone https://github.com/g0tmi1k/os-scripts.git
+############## pentest-machine     ### Automates some pentest jobs via nmap xml file
+git clone https://github.com/DanMcInerney/pentest-machine.git

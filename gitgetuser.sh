@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$#" -ne 2 ]; then
-    echo "Please provide a git username and wheather you want to see repos or starred"
+    echo "Please provide a git username and whether you want to see repos or starred"
     echo "exmaple: gitgetuser.sh royharoush starred\repos"
 	else 
 	echo "Getting the $2 for $1"
