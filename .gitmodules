@@ -25,3 +25,6 @@
 [submodule "tools/nikto"]
 	path = tools/nikto
 	url = https://github.com/sullo/nikto.git
+[submodule "tools/mpc"]
+	path = tools/mpc
+	url = https://github.com/g0tmi1k/mpc.git
