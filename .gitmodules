@@ -4,3 +4,18 @@
 [submodule "tools/nanomet"]
 	path = tools/nanomet
 	url = https://github.com/kost/nanomet.git
+[submodule "tools/Sparta"]
+	path = tools/Sparta
+	url = https://github.com/SECFORCE/sparta.git
+[submodule "tools/pentest-machine"]
+	path = tools/pentest-machine
+	url = https://github.com/DanMcInerney/pentest-machine.git
+[submodule "tools/infernal-twin"]
+	path = tools/infernal-twin
+	url = https://github.com/entropy1337/infernal-twin.git
+[submodule "tools/fast-recon"]
+	path = tools/fast-recon
+	url = https://github.com/DanMcInerney/fast-recon.git
+[submodule "tools/shodan-search"]
+	path = tools/shodan-search
+	url = https://github.com/DanMcInerney/shodan-search.git
