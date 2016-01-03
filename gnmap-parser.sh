@@ -3,7 +3,6 @@
   echo ' Gnmap-Parser.sh | [Version]: 3.4.2 | [Updated]: 05.01.2014'
   echo '============================================================================'
   echo
-}
 # Gather Gnmap Files Function
 func_gather(){
   # Validation Checks For Path Arguments
