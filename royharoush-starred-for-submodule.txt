@@ -130,8 +130,6 @@ git clone https://github.com/rsmudge/cortana-scripts.git
 git clone https://github.com/enigma0x3/Generate-Macro.git
 ############## Empire     ### Empire is a pure PowerShell post-exploitation agent.
 git clone https://github.com/PowerShellEmpire/Empire.git
-############## post-exploitation-wiki     ### Post Exploitation Wiki
-git clone https://github.com/mubix/post-exploitation-wiki.git
 ############## pth-toolkit     ### Modified version of the passing-the-hash tool collection (https://code.google.com/p/passing-the-hash/) made to work straight out of the box
 git clone https://github.com/mubix/pth-toolkit.git
 ############## shellshocker-pocs     ### Collection of Proof of Concepts and Potential Targets for #ShellShocker
