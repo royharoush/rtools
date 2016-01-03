@@ -1,0 +1,30 @@
+############## cheat     ### cheat allows you to create and view interactive cheatsheets on the command-line. It was designed to help remind *nix system administrators of options for commands that they use frequently but not frequently enough to remember.,
+git clone https://github.com/royharoush/cheat.git
+############## github-coup     ### Clone or Update Your User and Starred Repos
+git clone https://github.com/royharoush/github-coup.git
+############## mimikatz     ### A little tool to play with Windows security
+git clone https://github.com/royharoush/mimikatz.git
+############## OffSecScripts     ### OffSec scripts
+git clone https://github.com/royharoush/OffSecScripts.git
+############## pentest-machine     ### Automates some pentest jobs via nmap xml file
+git clone https://github.com/royharoush/pentest-machine.git
+############## pentestpackage     ### a package of Pentest scripts I have made or  commonly use
+git clone https://github.com/royharoush/pentestpackage.git
+############## RoyRepos     ### pentest floating repo based off git submodules), and some useful scripts i wrote,
+git clone https://github.com/royharoush/RoyRepos.git
+############## scadascan     ### Automatically exported from code.google.com/p/scadascan
+git clone https://github.com/royharoush/scadascan.git
+############## security-cheatsheets     ### A collection of cheatsheets for various infosec tools and topics.
+git clone https://github.com/royharoush/security-cheatsheets.git
+############## Sn1per     ### Automated Pentest Recon Scanner
+git clone https://github.com/royharoush/Sn1per.git
+############## sparta     ### Network Infrastructure Penetration Testing Tool
+git clone https://github.com/royharoush/sparta.git
+############## subterfuge     ### Automatically exported from code.google.com/p/subterfuge
+git clone https://github.com/royharoush/subterfuge.git
+############## teenage-mutant-ninja-turtles     ### Automatically exported from code.google.com/p/teenage-mutant-ninja-turtles
+git clone https://github.com/royharoush/teenage-mutant-ninja-turtles.git
+############## tools     ### Operational toolset utilizing git's submodule feature
+git clone https://github.com/royharoush/tools.git
+############## wavsep     ### Automatically exported from code.google.com/p/wavsep
+git clone https://github.com/royharoush/wavsep.git

@@ -31,3 +31,6 @@
 [submodule "tools/veil"]
 	path = tools/veil
 	url = https://github.com/Veil-Framework/Veil.git
+[submodule "tools/domain"]
+	path = tools/domain
+	url = https://github.com/jhaddix/domain.git

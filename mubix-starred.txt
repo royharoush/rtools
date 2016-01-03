@@ -1,0 +1,190 @@
+############## usbarmory     ### USB armory: open source flash-drive-sized computer
+git clone https://github.com/jdesfossez/usbarmory.git
+############## hashcat     ### Advanced CPU-based password recovery utility
+git clone https://github.com/hashcat/hashcat.git
+############## letsencrypt     ### This Let's Encrypt repo is an ACME client that can obtain certs and extensibly update server configurations (currently supports Apache on .deb based systems nginx support coming soon),
+git clone https://github.com/letsencrypt/letsencrypt.git
+############## thc-ipv6     ### IPv6 attack toolkit
+git clone https://github.com/vanhauser-thc/thc-ipv6.git
+############## dnSpy     ### .NET assembly editor decompiler, and debugger,
+git clone https://github.com/0xd4d/dnSpy.git
+############## impacket     ### Impacket is a collection of Python classes for working with network protocols.
+git clone https://github.com/CoreSecurity/impacket.git
+############## pth-toolkit     ### Modified version of the passing-the-hash tool collection (https://code.google.com/p/passing-the-hash/) made to work straight out of the box
+git clone https://github.com/byt3bl33d3r/pth-toolkit.git
+############## PassCrackNet     ### An application for distributing oclHashcat tasks. 
+git clone https://github.com/UnrealAkama/PassCrackNet.git
+############## kerberoast     ### 
+git clone https://github.com/nidem/kerberoast.git
+############## nanomet     ### Nano meterpreter shell based on TinyMet
+git clone https://github.com/kost/nanomet.git
+############## debian-ssh     ### Debian OpenSSL Predictable PRNG
+git clone https://github.com/g0tmi1k/debian-ssh.git
+############## littleblackbox     ### Database of private SSL/SSH keys for embedded devices
+git clone https://github.com/devttys0/littleblackbox.git
+############## PowerShell     ### 
+git clone https://github.com/mmessano/PowerShell.git
+############## PowerSploit     ### PowerSploit - A PowerShell Post-Exploitation Framework
+git clone https://github.com/PowerShellMafia/PowerSploit.git
+############## TidyOnSave     ### Sublime Text 2 plugin useful primarily to Metasploit contributors, to automatically run msftidy.rb when you save a file w/the .rb extension,
+git clone https://github.com/kernelsmith/TidyOnSave.git
+############## Wsdler     ### WSDL Parser extension for Burp
+git clone https://github.com/NetSPI/Wsdler.git
+############## ScourDNS     ### This script does some basic analysis of Windows DNS Debug Logs
+git clone https://github.com/reswob10/ScourDNS.git
+############## msfjs     ### NodeJS library for interacting with metasploit
+git clone https://github.com/SomeoneWeird/msfjs.git
+############## Scrape-DNS     ### Searches for interesting cached DNS entries.
+git clone https://github.com/304GEEK/Scrape-DNS.git
+############## artillery     ### The Artillery Project is an open-source blue team tool designed to protect Linux and Windows operating systems through multiple methods.
+git clone https://github.com/trustedsec/artillery.git
+############## social-engineer-toolkit     ### The Social-Engineer Toolkit (SET) repository from TrustedSec - All new versions of SET will be deployed here.
+git clone https://github.com/trustedsec/social-engineer-toolkit.git
+############## attackresearch     ### Rails application that mirrors carnal0wnage blog posts \Basics of Rails\
+git clone https://github.com/cktricky/attackresearch.git
+############## inmet     ### A multi-purpose meterpreter executable (inline many transports, msfpayload),
+git clone https://github.com/SherifEldeeb/inmet.git
+############## WordpressPingbackPortScanner     ### WordpressPingbackPortScanner
+git clone https://github.com/FireFart/WordpressPingbackPortScanner.git
+############## CTF-Scoreboard     ### A scoreboard for Security CTF events
+git clone https://github.com/PTCoreSec/CTF-Scoreboard.git
+############## MFSniffer     ### Mainframe TN3270 unencrypted TSO session user ID and password sniffer
+git clone https://github.com/mainframed/MFSniffer.git
+############## nikto     ### Nikto web server scanner
+git clone https://github.com/sullo/nikto.git
+############## meterpreter     ### THIS REPO IS OBSOLETE. USE https://github.com/rapid7/metasploit-payloads INSTEAD
+git clone https://github.com/rapid7/meterpreter.git
+############## volatile_reader     ### A small fast, and efficient offline event log parser, registry reader, pcap file analyzer, IL decompiler (with ICSharpCode), and pagefile analyzer written in C# and using GTK.,
+git clone https://github.com/brandonprry/volatile_reader.git
+############## Responder     ### Responder is a LLMNR NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. ,
+git clone https://github.com/SpiderLabs/Responder.git
+############## osf_db     ### Offline Security Focus Database
+git clone https://github.com/wick2o/osf_db.git
+############## metassh     ### ssh session type for metasploit
+git clone https://github.com/mubix/metassh.git
+############## npwin32     ### NPAPI DLL for Win32 API
+git clone https://github.com/mubix/npwin32.git
+############## Mainframed     ### Mainframe security auditing and scripts
+git clone https://github.com/mainframed/Mainframed.git
+############## ettercap     ### Ettercap Project
+git clone https://github.com/Ettercap/ettercap.git
+############## Ambush     ### Ambush Host Intrusion Prevention System
+git clone https://github.com/scriptjunkie/Ambush.git
+############## metasploit-framework     ### Metasploit Framework
+git clone https://github.com/webstersprodigy/metasploit-framework.git
+############## ZackAttack     ### Unveiled at DEF CON 20 NTLM Relaying to ALL THE THINGS!,
+git clone https://github.com/urbanesec/ZackAttack.git
+############## ip6-arpa-scan     ### ip6.arpa scanner
+git clone https://github.com/mubix/ip6-arpa-scan.git
+############## htshells     ### Self contained htaccess shells and attacks
+git clone https://github.com/mubix/htshells.git
+############## sqlmap     ### Automatic SQL injection and database takeover tool
+git clone https://github.com/sqlmapproject/sqlmap.git
+############## metasploit-framework     ### Metasploit Framework
+git clone https://github.com/mubix/metasploit-framework.git
+############## chapcrack     ### 
+git clone https://github.com/moxie0/chapcrack.git
+############## squirtle     ### A fork of the Squirtle project from: http://code.google.com/p/squirtle/
+git clone https://github.com/mubix/squirtle.git
+############## DoFler     ### Dashboard of Fail.  A application to carve out images an accounts on conference networks and display them for general entertainment.
+git clone https://github.com/SteveMcGrath/DoFler.git
+############## ntlmsspparse     ### Parses ntlmssp netlm[v2] hashes out of a pcap file for use with a password cracker.
+git clone https://github.com/psychomario/ntlmsspparse.git
+############## claymore     ### Claymore WiFi Honeypot
+git clone https://github.com/mayhemiclabs/claymore.git
+############## WhiteChapel     ### password cracking front end
+git clone https://github.com/mubix/WhiteChapel.git
+############## dbd     ### Durandal's Backdoor
+git clone https://github.com/gitdurandal/dbd.git
+############## metasploit-sharp     ### C# bindings for the Metasploit RPC
+git clone https://github.com/VolatileMindsLLC/metasploit-sharp.git
+############## ip6-arpa-scan     ### ip6.arpa scanner
+git clone https://github.com/Habbie/ip6-arpa-scan.git
+############## omgeasymon     ### Simple CCDC monitoring tool for red or blue teams
+git clone https://github.com/pentestify/omgeasymon.git
+############## sptoolkit     ### Simple Phishing Toolkit is a super easy to install and use phishing framework built to help Information Security professionals find human vulnerabilities
+git clone https://github.com/sptoolkit/sptoolkit.git
+############## XMLmao     ### A configurable XPath/XML injection testbed
+git clone https://github.com/SpiderLabs/XMLmao.git
+############## SQLol     ### A configurable SQL injection test-bed
+git clone https://github.com/SpiderLabs/SQLol.git
+############## domain-profiler     ### Given a domain will tell you the decisions that the domain owner has made.,
+git clone https://github.com/jwilkins/domain-profiler.git
+############## metassh     ### ssh session type for metasploit
+git clone https://github.com/dirtyfilthy/metassh.git
+############## tapir     ### An easy-to-use and extensible framework for OSINT - REPLACED BY INTRIGUE-CORE
+git clone https://github.com/intrigueio/tapir.git
+############## JohnTheRipper     ### Jumbo patches for John the Ripper. The \bleeding-jumbo\ branch (default) is based on 1.8.0-Jumbo-1. The \master\ branch is just a copy of Solar's core (aka \john proper\ as in non-Jumbo) CVS repo.,
+git clone https://github.com/magnumripper/JohnTheRipper.git
+############## beef     ### The Browser Exploitation Framework Project
+git clone https://github.com/beefproject/beef.git
+############## doom3.gpl     ### Doom 3 GPL source release
+git clone https://github.com/TTimo/doom3.gpl.git
+############## scripts     ### Scripts I use during pentest engagements.
+git clone https://github.com/averagesecurityguy/scripts.git
+############## pwn_plug_sources     ### Public source repository for the Pwn Plug platform.
+git clone https://github.com/pwnieexpress/pwn_plug_sources.git
+############## warvox     ### 
+git clone https://github.com/rapid7/warvox.git
+############## NoVAHA-Scripts     ### Scripts that the NoVA Hacker Association Members have created
+git clone https://github.com/NoVAHA/NoVAHA-Scripts.git
+############## heritrix3     ### Heritrix is the Internet Archive's open-source extensible, web-scale, archival-quality web crawler project.  ,
+git clone https://github.com/internetarchive/heritrix3.git
+############## msfrpc-client     ### Rapid7 Metasploit API client library written in Ruby
+git clone https://github.com/rapid7/msfrpc-client.git
+############## nexpose-client     ### Rapid7 Nexpose API client library written in Ruby
+git clone https://github.com/rapid7/nexpose-client.git
+############## XSS-over-NBNS     ### Proof of concept toolkit for demonstrating xss attacks against the Netgear WGR614v5.
+git clone https://github.com/simon-weber/XSS-over-NBNS.git
+############## crack     ### XMLRPC server for password cracking
+git clone https://github.com/averagesecurityguy/crack.git
+############## Not-In-Pentesting-Class     ### The Dirty Secrets They Didn't Teach You In Pentesting Class
+git clone https://github.com/mubix/Not-In-Pentesting-Class.git
+############## cuckoo     ### Cuckoo Sandbox is an automated dynamic malware analysis system
+git clone https://github.com/cuckoosandbox/cuckoo.git
+############## PadBuster     ### Automated script for performing Padding Oracle attacks
+git clone https://github.com/gw0/PadBuster.git
+############## metasploit-framework     ### Metasploit Framework
+git clone https://github.com/rapid7/metasploit-framework.git
+############## stuff     ### Things I've coded or use (cause I can't find them online anymore),
+git clone https://github.com/mubix/stuff.git
+############## Metasploit-Code     ### Metasploit modules that didn't make it into trunk for some reason or the other
+git clone https://github.com/carnal0wnage/Metasploit-Code.git
+############## AMI-Exposed     ### AMI Exposed is a Ruby framework for testing Amazon Machine Images (AMIs) for common security weaknesses and credential exposures.
+git clone https://github.com/jjarmoc/AMI-Exposed.git
+############## DVCS-Pillage     ### Pillage web accessible GIT HG and BZR repositories,
+git clone https://github.com/evilpacket/DVCS-Pillage.git
+############## htshells     ### Self contained htaccess shells and attacks
+git clone https://github.com/wireghoul/htshells.git
+############## ctf_apps     ### Vulnerable applications
+git clone https://github.com/mccabe615/ctf_apps.git
+############## buby     ### A JRuby implementation of the BurpExtender interface for PortSwigger Burp Suite.
+git clone https://github.com/tduehr/buby.git
+############## carnal0wnage-code     ### Random Code
+git clone https://github.com/carnal0wnage/carnal0wnage-code.git
+############## shellcodeexec     ### Script to execute in memory a sequence of opcodes
+git clone https://github.com/inquisb/shellcodeexec.git
+############## PadBuster     ### Automated script for performing Padding Oracle attacks
+git clone https://github.com/GDSSecurity/PadBuster.git
+############## asciinema.org     ### asciinema.org web app
+git clone https://github.com/asciinema/asciinema.org.git
+############## proxychains     ### proxychains - a tool that forces any TCP connection made by any given application to follow through proxy like TOR or any other SOCKS4 SOCKS5 or HTTP(S) proxy.  Supported auth-types: \user/pass\ for SOCKS4/5, \basic\ for HTTP.,
+git clone https://github.com/haad/proxychains.git
+############## npwin32     ### NPAPI DLL for Win32 API
+git clone https://github.com/hasegawayosuke/npwin32.git
+############## Metasploit-Plugins     ### Plugins for Metasploit Framework
+git clone https://github.com/darkoperator/Metasploit-Plugins.git
+############## dnsrecon     ### DNS Enumeration Script
+git clone https://github.com/darkoperator/dnsrecon.git
+############## Meterpreter-Scripts     ### Meterpreter Scripts that I'm working on
+git clone https://github.com/darkoperator/Meterpreter-Scripts.git
+############## mitmproxy     ### An interactive SSL-capable intercepting HTTP proxy for penetration testers and software developers
+git clone https://github.com/mitmproxy/mitmproxy.git
+############## misc     ### scripts and tools
+git clone https://github.com/svent/misc.git
+############## netifera     ### Open Source Network Security Platform
+git clone https://github.com/netifera/netifera.git
+############## gltail     ### Real-time visualization of server traffic events and statistics with Ruby, SSH and OpenGL,
+git clone https://github.com/Fudge/gltail.git
+############## xdotool     ### fake keyboard/mouse input window management, and more ,
+git clone https://github.com/jordansissel/xdotool.git
