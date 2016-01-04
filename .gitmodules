@@ -34,3 +34,12 @@
 [submodule "tools/domain"]
 	path = tools/domain
 	url = https://github.com/jhaddix/domain.git
+[submodule "tools/dnsrecon"]
+	path = tools/dnsrecon
+	url = https://github.com/darkoperator/dnsrecon.git
+[submodule "tools/meterpreter-scripts"]
+	path = tools/meterpreter-scripts
+	url = https://github.com/darkoperator/Meterpreter-Scripts.git
+[submodule "tools/gitlist"]
+	path = tools/gitlist
+	url = https://github.com/macubergeek/gitlist.git
