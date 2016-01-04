@@ -46,3 +46,102 @@
 [submodule "tools/PowerTools"]
 	path = tools/PowerTools
 	url = https://github.com/PowerShellEmpire/PowerTools.git
+[submodule "tools/pentestpackage"]
+	path = tools/pentestpackage
+	url = https://github.com/leonteale/pentestpackage.git
+[submodule "tools/discover"]
+	path = tools/discover
+	url = https://github.com/leebaird/discover.git
+[submodule "tools/nishang"]
+	path = tools/nishang
+	url = https://github.com/samratashok/nishang.git
+[submodule "tools/Sublist3r"]
+	path = tools/Sublist3r
+	url = https://github.com/aboul3la/Sublist3r.git
+[submodule "tools/MSF-Addons"]
+	path = tools/MSF-Addons
+	url = https://github.com/v-p-b/MSF-Addons.git
+[submodule "tools/Metasploit-Plugins"]
+	path = tools/Metasploit-Plugins
+	url = https://github.com/darkoperator/Metasploit-Plugins.git
+[submodule "tools/tools"]
+	path = tools/tools
+	url = https://github.com/nullsecuritynet/tools.git
+[submodule "tools/oscp"]
+	path = tools/oscp
+	url = https://github.com/wg135/oscp.git
+[submodule "tools/BinGoo"]
+	path = tools/BinGoo
+	url = https://github.com/Hood3dRob1n/BinGoo.git
+[submodule "tools/teenage-mutant-ninja-turtles"]
+	path = tools/teenage-mutant-ninja-turtles
+	url = https://github.com/royharoush/teenage-mutant-ninja-turtles.git
+[submodule "tools/spiderfoot"]
+	path = tools/spiderfoot
+	url = https://github.com/smicallef/spiderfoot
+[submodule "tools/pentools"]
+	path = tools/pentools
+	url = https://github.com/rossja/pentools.git
+[submodule "tools/autopwn"]
+	path = tools/autopwn
+	url = https://github.com/nccgroup/autopwn.git
+[submodule "tools/pwnbin"]
+	path = tools/pwnbin
+	url = https://github.com/kahunalu/pwnbin.git
+[submodule "tools/ptf"]
+	path = tools/ptf
+	url = https://github.com/trustedsec/ptf.git
+[submodule "tools/commix"]
+	path = tools/commix
+	url = https://github.com/stasinopoulos/commix.git
+[submodule "tools/TinyMet"]
+	path = tools/TinyMet
+	url = https://github.com/SherifEldeeb/TinyMet.git
+[submodule "tools/undetected-meterpreter-stagers"]
+	path = tools/undetected-meterpreter-stagers
+	url = https://github.com/DiabloHorn/undetected-meterpreter-stagers.git
+[submodule "tools/inmet"]
+	path = tools/inmet
+	url = https://github.com/SherifEldeeb/inmet.git
+[submodule "tools/metasploit-loader"]
+	path = tools/metasploit-loader
+	url = https://github.com/rsmudge/metasploit-loader.git
+[submodule "tools/Generate-Macro"]
+	path = tools/Generate-Macro
+	url = https://github.com/enigma0x3/Generate-Macro.git
+[submodule "tools/Empire"]
+	path = tools/Empire
+	url = https://github.com/PowerShellEmpire/Empire.git
+[submodule "tools/shellshocker-pocs"]
+	path = tools/shellshocker-pocs
+	url = https://github.com/mubix/shellshocker-pocs.git
+[submodule "tools/search-bing"]
+	path = tools/search-bing
+	url = https://github.com/DanMcInerney/search-bing.git
+[submodule "tools/search-google"]
+	path = tools/search-google
+	url = https://github.com/DanMcInerney/search-google.git
+[submodule "tools/quickscan"]
+	path = tools/quickscan
+	url = https://github.com/DanMcInerney/quickscan.git
+[submodule "tools/ddos-script"]
+	path = tools/ddos-script
+	url = https://github.com/FreelancePentester/ddos-script.git
+[submodule "tools/PowerSploit"]
+	path = tools/PowerSploit
+	url = https://github.com/PowerShellMafia/PowerSploit.git
+[submodule "tools/Shellcode"]
+	path = tools/Shellcode
+	url = https://github.com/isislab/Shellcode.git
+[submodule "tools/Lazykali"]
+	path = tools/Lazykali
+	url = https://github.com/bradfreda/Lazykali.git
+[submodule "tools/shellme"]
+	path = tools/shellme
+	url = https://github.com/hatRiot/shellme.git
+[submodule "tools/os-scripts"]
+	path = tools/os-scripts
+	url = https://github.com/g0tmi1k/os-scripts.git
+[submodule "tools/sqlmap"]
+	path = tools/sqlmap
+	url = https://github.com/sqlmapproject/sqlmap.git
