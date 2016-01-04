@@ -43,3 +43,6 @@
 [submodule "tools/gitlist"]
 	path = tools/gitlist
 	url = https://github.com/macubergeek/gitlist.git
+[submodule "tools/PowerTools"]
+	path = tools/PowerTools
+	url = https://github.com/PowerShellEmpire/PowerTools.git
