@@ -145,3 +145,6 @@
 [submodule "tools/sqlmap"]
 	path = tools/sqlmap
 	url = https://github.com/sqlmapproject/sqlmap.git
+[submodule "tools/metagoofil"]
+	path = tools/metagoofil
+	url = https://github.com/laramies/metagoofil.git
