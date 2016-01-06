@@ -148,3 +148,6 @@
 [submodule "tools/metagoofil"]
 	path = tools/metagoofil
 	url = https://github.com/laramies/metagoofil.git
+[submodule "tools/theHarvester"]
+	path = tools/theHarvester
+	url = https://github.com/laramies/theHarvester.git
