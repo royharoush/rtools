@@ -27,4 +27,3 @@ mv ../gnx* ./
 #cd Combined_Results
 echo "I like wearing flip flops!"
 ls -latr | tail -n 10
-}
