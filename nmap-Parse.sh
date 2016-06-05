@@ -17,10 +17,14 @@ python gnxparse.py gnx-merged.xml -r 'nmap -A' >> ./suggested_scans.sh
 echo "########All Done, Merged XML is in gnx-merged.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
-bash gnmap-parser.sh -p
 mkdir Combined_Results
-mv Parsed-Results gnx* ./Combined_Results
+find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Combined_Results/gnmap-merged.gnmap
+echo "############parsing Gnmap files##########"
+mv gnmap-parser.sh ./Combined_Results
 cd Combined_Results
+bash gnmap-parser.sh -p
+mv ../gnx* ./
+#cd Combined_Results
 echo "I like wearing flip flops!"
 ls -latr | tail -n 10
 }
