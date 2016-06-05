@@ -13,7 +13,7 @@ python gnxparse.py gnx-merged.xml -p >> gnx-Open-Ports.csv
 python gnxparse.py gnx-merged.xml -i >> gnx-Live-IPs.csv
 python gnxparse.py gnx-merged.xml -s >> gnx-Subnets.csv 
 python gnxparse.py gnx-merged.xml -c >> gnx-Host-Ports-Matrix.csv  
-python gnxparse.py gnx-merged.xml -r 'nmap -A' >> ./suggested_scans.sh
+python gnxparse.py gnx-merged.xml -r 'nmap -A' >> ./gnx-suggested_scans.sh
 echo "########All Done, Merged XML is in gnx-merged.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
