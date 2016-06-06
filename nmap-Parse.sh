@@ -17,6 +17,8 @@ python gnxparse.py gnx-merged.xml -r 'nmap -A' >> ./gnx-suggested_scans.sh
 echo "########All Done, Merged XML is in gnx-merged.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
+##### This can be used to remove files that doesnt have any open ports 
+#grep -rLZ "state="open"" . | while IFS= read -rd '' x; do rm "$x"; done
 mkdir Combined_Results
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Combined_Results/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
