@@ -5,11 +5,11 @@ wget https://raw.githubusercontent.com/royharoush/rtools/master/gnmap-parser.sh 
 echo    "########## Download Complete ############"
 echo    "########## GNX Nmap Tools Are Now Inside Your Directory ############"
 echo    "########## Modified Gnmap-Parser is now Inside Your Directory ############"
-echo "I will now parse all your XMLs into one file called gnx-merged.xml" 
 echo '####removing files with no  open ports for faster processing############'
 mkdir NoOpenPorts
-grep -rLZ "state="open"" . | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
-#grep -rLZ "state="open"" . | while IFS= read -rd '' x; do rm "$x"; done
+grep -LZ "state="open"" . | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
+#grep -LZ "state="open"" . | while IFS= read -rd '' x; do rm "$x"; done
+echo "I will now parse all your XMLs into one file called gnx-merged.xml" 
 python gnxmerge.py -s ./  > gnx-merged.xml
 echo "I will now create the outputs of your scans from the XML file" 
 python gnxparse.py gnx-merged.xml -i -p -s -r -c >> gnx-output_all.csv 
