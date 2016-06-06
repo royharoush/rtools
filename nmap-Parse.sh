@@ -6,8 +6,9 @@ echo    "########## Download Complete ############"
 echo    "########## GNX Nmap Tools Are Now Inside Your Directory ############"
 echo    "########## Modified Gnmap-Parser is now Inside Your Directory ############"
 echo '####removing files with no  open ports for faster processing############'
-mkdir NoOpenPorts
-grep -LZ "state="open"" . | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
+#mkdir NoOpenPorts
+#grep -LZ "state="open"" . | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
+##### This can be used to remove files that doesnt have any open ports 
 #grep -LZ "state="open"" . | while IFS= read -rd '' x; do rm "$x"; done
 echo "I will now parse all your XMLs into one file called gnx-merged.xml" 
 python gnxmerge.py -s ./  > gnx-merged.xml
@@ -21,8 +22,6 @@ python gnxparse.py gnx-merged.xml -r 'nmap -A' >> ./gnx-suggested_scans.sh
 echo "########All Done, Merged XML is in gnx-merged.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
-##### This can be used to remove files that doesnt have any open ports 
-
 mkdir Combined_Results
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Combined_Results/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
