@@ -24,6 +24,6 @@ mv gnmap-parser.sh ./Combined_Results
 cd Combined_Results
 bash gnmap-parser.sh -p
 mv ../gnx* ./
-#cd Combined_Results
+cd Combined_Results
 echo "I like wearing flip flops!"
 ls -latr | tail -n 10
