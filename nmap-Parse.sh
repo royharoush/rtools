@@ -18,6 +18,8 @@ echo "########All Done, Merged XML is in gnx-merged.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
 ##### This can be used to remove files that doesnt have any open ports 
+mkdir NoOpenPorts
+grep -rLZ "state="open"" . | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
 #grep -rLZ "state="open"" . | while IFS= read -rd '' x; do rm "$x"; done
 mkdir Combined_Results
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Combined_Results/gnmap-merged.gnmap
