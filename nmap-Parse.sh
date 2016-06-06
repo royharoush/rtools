@@ -6,6 +6,7 @@ echo    "########## Download Complete ############"
 echo    "########## GNX Nmap Tools Are Now Inside Your Directory ############"
 echo    "########## Modified Gnmap-Parser is now Inside Your Directory ############"
 echo "I will now parse all your XMLs into one file called gnx-merged.xml" 
+echo '####removing files with no  open ports for faster processing############'
 mkdir NoOpenPorts
 grep -rLZ "state="open"" . | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
 #grep -rLZ "state="open"" . | while IFS= read -rd '' x; do rm "$x"; done
