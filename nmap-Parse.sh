@@ -9,7 +9,7 @@ echo '####removing files with no  open ports for faster processing############'
 #mkdir NoOpenPorts
 #grep -LZ "state="open"" . | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
 ##### This can be used to remove files that doesnt have any open ports 
-#grep -LZ "state="open"" . | while IFS= read -rd '' x; do rm "$x"; done
+#grep -LZ "state="open"" *.xml | while IFS= read -rd '' x; do rm "$x"; done
 echo "I will now parse all your XMLs into one file called gnx-merged.xml" 
 python gnxmerge.py -s ./  > gnx-merged.xml
 echo "I will now create the outputs of your scans from the XML file" 
