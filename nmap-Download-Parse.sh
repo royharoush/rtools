@@ -30,11 +30,8 @@ cd Combined_Results
 bash gnmap-parser.sh -p
 mv ../gnx* ./
 #cd Combined_Results
-mkdir forNessus-$(echo $(date | tr ":" "-" | sed s'| ||'g))
-cat ./Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap-LiveHosts-$(echo $(date | tr ":" "-" | sed s'| ||'g)).txt
-cat ./Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-OpenPorts-$(echo $(date | tr ":" "-" | sed s'| ||'g)).txt
-mv Gnmap-LiveHosts-* ./forNessus-$(echo $(date | tr ":" "-" | sed s'| ||'g))
-mv Gnmap-OpenPorts-* ./forNessus-$(echo $(date | tr ":" "-" | sed s'| ||'g))
+cat ./Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap-$(echo $(date | tr ":" "-" | sed s'| ||'g))-LiveHosts.txt
+cat ./Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-$(echo $(date | tr ":" "-" | sed s'| ||'g))-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
 https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
 echo "#### To parse again run 'bash nmapParse.sh' ####"
