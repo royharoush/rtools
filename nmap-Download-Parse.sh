@@ -36,4 +36,4 @@ echo "#### Downloading nmapParse.sh####"
 https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
 echo "#### To parse again run 'bash nmapParse.sh' ####"
 echo "I like wearing flip flops!"
-ls -latr | tail -n 10
+#ls -latr | tail -n 10
