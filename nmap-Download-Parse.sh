@@ -37,3 +37,4 @@ https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/
 echo "#### To parse again run 'bash nmapParse.sh' ####"
 echo "I like wearing flip flops!"
 #ls -latr | tail -n 10
+rm -- "$0"
