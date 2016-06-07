@@ -7,7 +7,8 @@
 # your Debian/Ubuntu/CentOS box. It has been designed to be as unobtrusive and
 # universal as possible.
 
-
+apt-key adv --keyserver pgp.mit.edu --recv-keys ED444FF07D8D0BF6
+aptitude update
 # Detect Debian users running the script with "sh" instead of bash
 if readlink /proc/$$/exe | grep -qs "dash"; then
 	echo "This script needs to be run with bash, not sh"
