@@ -30,5 +30,8 @@ cd Combined_Results
 bash gnmap-parser.sh -p
 mv ../gnx* ./
 cd Combined_Results
+echo "#### Downloading nmapParse.sh####"
+https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
+echo "#### To parse again run 'bash nmapParse.sh' ####"
 echo "I like wearing flip flops!"
 ls -latr | tail -n 10
