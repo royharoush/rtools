@@ -30,8 +30,8 @@ cd Combined_Results
 bash gnmap-parser.sh -p
 mv ../gnx* ./
 #cd Combined_Results
-cat ./Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap-$(echo $(date | tr ":" "-" | sed s'| ||'g))-LiveHosts.txt
-cat ./Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-$(echo $(date | tr ":" "-" | sed s'| ||'g))-OpenPorts.txt
+cat ./Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap-$(echo date +"%d-%m-%y"-"%T" |tr ":" "-")-LiveHosts.txt
+cat ./Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-$(echo date +"%d-%m-%y"-"%T" |tr ":" "-")-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
 https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
 echo "#### To parse again run 'bash nmapParse.sh' ####"
