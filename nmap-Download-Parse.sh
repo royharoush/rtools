@@ -22,19 +22,19 @@ python gnxparse.py gnx-merged.xml -r 'nmap -A' >> ./gnx-suggested_scans.sh
 echo "########All Done, Merged XML is in gnx-merged.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
-mkdir Combined_Results
-find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Combined_Results/gnmap-merged.gnmap
+mkdir Results
+find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
-mv gnmap-parser.sh ./Combined_Results
-cd Combined_Results
+mv gnmap-parser.sh ./Results
+cd Results
 bash gnmap-parser.sh -p
 mv ../gnx* ./
-#cd Combined_Results
+#cd Results
 cat ./Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap-$(date +"%d-%m-%y"-"%T" |tr ":" "-")-LiveHosts.txt
 cat ./Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-$(date +"%d-%m-%y"-"%T" |tr ":" "-")-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
-https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
-echo "#### To parse again run 'bash nmapParse.sh' ####"
+#https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
+#echo "#### To parse again run 'bash nmapParse.sh' ####"
 echo "I like wearing flip flops!"
-#ls -latr | tail -n 10
-rm -- "$0"
+ls ./Results -latr | tail -n 10
+#rm -- "$0"
