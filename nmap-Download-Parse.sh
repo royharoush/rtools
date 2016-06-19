@@ -6,6 +6,8 @@ echo    "########## Download Complete ############"
 echo    "########## GNX Nmap Tools Are Now Inside Your Directory ############"
 echo    "########## Modified Gnmap-Parser is now Inside Your Directory ############"
 echo '####removing files with no  open ports for faster processing############'
+### echo all the files with no open ports in them 
+#find -name '*.xml'   | xargs -I{} grep -LZ "state=\"open\"" {} | while IFS= read -rd '' x; do echo "$x" ; done 
 #mkdir NoOpenPorts
 #grep -LZ \"state="open\"\" *.xml | while IFS= read -rd '' x; do mv "$x" ./NoOpenPorts; done
 #grep -LZ "state="open\"" *.xml | while IFS= read -rd '' x; do echo "$x"; done
