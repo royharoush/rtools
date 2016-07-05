@@ -20,19 +20,19 @@ python gnxparse.py gnx-merged.xml -r 'nmap -A' >> ./gnx-suggested_scans-$now.sh
 echo "########All Done, Merged XML is in gnx-merged.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
-mkdir Results
-find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results/gnmap-merged-$now.gnmap
+mkdir Results-$now
+find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged-$now.gnmap
 echo "############parsing Gnmap files##########"
-mv gnmap-parser.sh ./Results
-cd Results
+mv gnmap-parser.sh ./Results-$now
+cd Results-$now
 bash gnmap-parser.sh -p
 mv ../gnx* ./
-#cd Results
-cat ./Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap--$now-LiveHosts.txt
-cat ./Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-$now-OpenPorts.txt
+#cd Results-$now
+cat ./Parsed-Results-$now/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap--$now-LiveHosts.txt
+cat ./Parsed-Results-$now/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-$now-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
 #https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
 #echo "#### To parse again run 'bash nmapParse.sh' ####"
 echo "I like wearing flip flops!"
-ls ./Results -latr | tail -n 10
+ls ./Results-$now -latr | tail -n 10
 #rm -- "$0"
