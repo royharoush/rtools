@@ -10,6 +10,7 @@ echo    "########## GNX Nmap Tools Are Now Inside Your Directory ############"
 echo    "########## Modified Gnmap-Parser is now Inside Your Directory ############"
 echo ##### This can be used to remove files that don't have any open ports 
 echo #find -name '*.xml'   | xargs -I{} grep -LZ "state=\"open\"" {} | while IFS= read -rd '' x; do mv "$x" "$x".empty ; done 
+echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rename("$_", "$_.empty")'
 echo "I will now parse all your XMLs into one file called gnx-merged-$now.xml" 
 python gnxmerge.py -s ./  > gnx-merged-$now.xml
 echo "I will now create the outputs of your scans from the XML file" 
