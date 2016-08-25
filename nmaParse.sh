@@ -17,7 +17,7 @@ echo "I will now create the outputs of your scans from the XML file"
 python gnxparse.py gnx-merged-$now.xml -i -p -s -r -c >> gnx-output_all-$now.csv 
 python gnxparse.py gnx-merged-$now.xml -p >> gnx-Open-Ports.txt 
 python gnxparse.py gnx-merged-$now.xml -i >> gnx-Live-IPs.txt
-python gnxparse.py gnx-merged-$now.xml -s >> gnx-Subnets.txt 
+python gnxparse.py gnx-merged-$now.xml -s >> gnx-Subnets.txt
 python gnxparse.py gnx-merged-$now.xml -c >> gnx-Host-Ports-Matrix.csv  
 python gnxparse.py gnx-merged-$now.xml -r 'nmap -A ' >> ./gnx-suggested_scans-$now.sh
 echo "########All Done, Merged XML is in gnx-merged-$now.xml########"
@@ -36,5 +36,9 @@ echo "#### Downloading nmapParse.sh####"
 #https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
 #echo "#### To parse again run 'bash nmapParse.sh' ####"
 echo "I like wearing flip flops!"
-ls ./Results-$now -latr | tail -n 10
-#rm -- "$0"
+echo "Comperessing current run's Nmap output and removing files"
+#tar -cvzf NmapFiles-$now.tar.gz --remove-files *.nmap
+#tar -cvzf XMLFiles-$now.tar.gz --remove-files *.xml
+#tar -cvzf GnmapFiles-$now.tar.gz --remove-files *.gnmap
+ls Results-$now -latr | tail -n 10
+echo "Have fun !"
