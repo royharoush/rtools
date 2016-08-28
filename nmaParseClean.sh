@@ -36,5 +36,6 @@ echo "Comperessing current run's Nmap output and removing files"
 tar -cvzf NmapFiles-$now.tar.gz --remove-files *.nmap
 tar -cvzf XMLFiles-$now.tar.gz --remove-files *.xml
 tar -cvzf GnmapFiles-$now.tar.gz --remove-files *.gnmap
+mv *.tar.gz ./Results-$now/
 ls Results-$now -latr | tail -n 10
 echo "Have fun !"
