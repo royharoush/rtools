@@ -37,6 +37,7 @@ echo "#### Downloading nmapParse.sh####"
 #echo "#### To parse again run 'bash nmapParse.sh' ####"
 echo "I like wearing flip flops!"
 echo "Comperessing current run's Nmap output and removing files"
+cd ..
 tar -cvzf NmapFiles-$now.tar.gz --remove-files *.nmap
 tar -cvzf XMLFiles-$now.tar.gz --remove-files *.xml
 tar -cvzf GnmapFiles-$now.tar.gz --remove-files *.gnmap
