@@ -26,10 +26,11 @@ echo "############parsing Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
 bash ./gnmap-parser.sh -p
-mv -r ./Parsed_Results ./Results-$now/
+mv ./Parsed_Results ./Results-$now/
+mv ./gnmap-parser.sh ./Results-$now/
 mv gnx* ./Results-$now/
-cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap-LiveHosts.txt
-cat ./Results-$now/Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-OpenPorts.txt
+cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > ./Results-$now/Gnmap-LiveHosts.txt
+cat ./Results-$now/Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > ./Results-$now/Gnmap-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
 echo "Comperessing current run's Nmap output and removing files"
 tar -cvzf NmapFiles-$now.tar.gz --remove-files *.nmap
