@@ -14,30 +14,24 @@ echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rena
 echo "I will now parse all your XMLs into one file called gnx-merged-$now.xml" 
 python gnxmerge.py -s ./  > gnx-merged-$now.xml
 echo "I will now create the outputs of your scans from the XML file" 
-python gnxparse.py gnx-merged-$now.xml -i -p -s -r -c >> gnx-output_all-$now.csv 
-python gnxparse.py gnx-merged-$now.xml -p >> gnx-Open-Ports.txt 
-python gnxparse.py gnx-merged-$now.xml -i >> gnx-Live-IPs.txt
-python gnxparse.py gnx-merged-$now.xml -s >> gnx-Subnets.txt
-python gnxparse.py gnx-merged-$now.xml -c >> gnx-Host-Ports-Matrix.csv  
-python gnxparse.py gnx-merged-$now.xml -r 'nmap -A ' >> ./gnx-suggested_scans-$now.sh
+python gnxparse.py Results-$now/gnx-merged-$now.xml -i -p -s -r -c >c> gnx-output_all-$now.csv 
+python gnxparse.py Results-$now/gnx-merged-$now.xml -p >> gnx-Open-Ports.txt 
+python gnxparse.py Results-$now/gnx-merged-$now.xml -i >> gnx-Live-IPs.txt
+python gnxparse.py Results-$now/gnx-merged-$now.xml -s >> gnx-Subnets.txt
+python gnxparse.py Results-$now/gnx-merged-$now.xml -c >> gnx-Host-Ports-Matrix.csv  
+python gnxparse.py Results-$now/gnx-merged-$now.xml -r 'nmap -A ' >> ./gnx-suggested_scans-$now.sh
 echo "########All Done, Merged XML is in gnx-merged-$now.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
 mv gnmap-parser.sh ./Results-$now
-cd Results-$now
-bash gnmap-parser.sh -p
-mv ../gnx* ./
-#cd Results-$now
+bash Results-$now/gnmap-parser.sh -p
+mv gnx* ./Results-$now/
 cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > Gnmap-LiveHosts.txt
 cat ./Results-$now/Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > Gnmap-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
-#https://raw.githubusercontent.com/royharoush/rtools/master/nmapParse.sh &> /dev/null
-#echo "#### To parse again run 'bash nmapParse.sh' ####"
-echo "I like wearing flip flops!"
 echo "Comperessing current run's Nmap output and removing files"
-cd ..
 tar -cvzf NmapFiles-$now.tar.gz --remove-files *.nmap
 tar -cvzf XMLFiles-$now.tar.gz --remove-files *.xml
 tar -cvzf GnmapFiles-$now.tar.gz --remove-files *.gnmap
