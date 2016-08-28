@@ -26,7 +26,7 @@ echo "############parsing Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
 bash ./gnmap-parser.sh -p
-mv Parsed-Results ./Results-$now/
+mv Parsed-Results/ ./Results-$now/
 mv ./gnmap-parser.sh ./Results-$now/
 mv gnx* ./Results-$now/
 cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > ./Results-$now/Gnmap-LiveHosts.txt
