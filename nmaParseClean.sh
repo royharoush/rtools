@@ -32,10 +32,15 @@ mv gnx* ./Results-$now/
 cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > ./Results-$now/Gnmap-LiveHosts.txt
 cat ./Results-$now/Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > ./Results-$now/Gnmap-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
-echo "Comperessing current run's Nmap output and removing files"
+find . -maxdepth 1 -name '*.gnmap' -print >gnmap.manifest
+find . -maxdepth 1 -name '*.xml' -print >xml.manifest
+find . -maxdepth 1 -name '*.nmap' -print > nmap.manifest
+#tar -cvzf textfiles.tar.gz --files-from /tmp/test.manifest
+#find . -name '*.' | xargs rm -v
 tar -cvzf NmapFiles-$now.tar.gz --remove-files --files-from nmap.manifest
 tar -cvzf XMLFiles-$now.tar.gz --remove-files --files-from xml.manifest
 tar -cvzf GnmapFiles-$now.tar.gz --remove-files --files-from gnmap.manifest
 mv *.tar.gz ./Results-$now/
 ls Results-$now -latr | tail -n 10
 echo "Have fun !"
+
