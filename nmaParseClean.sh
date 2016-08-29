@@ -25,7 +25,7 @@ echo "########Scan data can be found in gnx* files########"
 echo "############parsing Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
-bash ./gnmap-parser.sh -p
+bash ./gnmap-parser.sh -p ./Results-$now/gnmap-merged.gnmap
 mv Parsed-Results/ ./Results-$now/
 mv ./gnmap-parser.sh ./Results-$now/
 mv gnx* ./Results-$now/
