@@ -14,12 +14,12 @@ echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rena
 echo "I will now parse all your XMLs into one file called gnx-merged-$now.xml" 
 python gnxmerge.py -s ./  > gnx-merged-$now.xml
 echo "I will now create the outputs of your scans from the XML file" 
-python gnxparse.py Results-$now/gnx-merged-$now.xml -i -p -s -r -c >c> gnx-output_all-$now.csv 
-python gnxparse.py Results-$now/gnx-merged-$now.xml -p >> gnx-Open-Ports.txt 
-python gnxparse.py Results-$now/gnx-merged-$now.xml -i >> gnx-Live-IPs.txt
-python gnxparse.py Results-$now/gnx-merged-$now.xml -s >> gnx-Subnets.txt
-python gnxparse.py Results-$now/gnx-merged-$now.xml -c >> gnx-Host-Ports-Matrix.csv  
-python gnxparse.py Results-$now/gnx-merged-$now.xml -r 'nmap -A ' >> ./gnx-suggested_scans-$now.sh
+python gnxparse.py gnx-merged-$now.xml -i -p -s -r -c >c> gnx-output_all-$now.csv 
+python gnxparse.py gnx-merged-$now.xml -p >> ./Results-$now/gnx-Open-Ports.txt 
+python gnxparse.py gnx-merged-$now.xml -i >> ./Results-$now/gnx-Live-IPs.txt
+python gnxparse.py gnx-merged-$now.xml -s >> ./Results-$now/gnx-Subnets.txt
+python gnxparse.py gnx-merged-$now.xml -c >> ./Results-$now/gnx-Host-Ports-Matrix.csv  
+python gnxparse.py gnx-merged-$now.xml -r 'nmap -A ' >> ./Results-$now/gnx-suggested_scans-$now.sh
 echo "########All Done, Merged XML is in gnx-merged-$now.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
