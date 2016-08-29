@@ -33,9 +33,9 @@ cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > ./Resu
 cat ./Results-$now/Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > ./Results-$now/Gnmap-OpenPorts.txt
 echo "#### Downloading nmapParse.sh####"
 echo "Comperessing current run's Nmap output and removing files"
-tar -cvzf NmapFiles-$now.tar.gz --remove-files *.nmap
-tar -cvzf XMLFiles-$now.tar.gz --remove-files *.xml
-tar -cvzf GnmapFiles-$now.tar.gz --remove-files *.gnmap
+tar -cvzf NmapFiles-$now.tar.gz --remove-files --files-from nmap.manifest
+tar -cvzf XMLFiles-$now.tar.gz --remove-files --files-from xml.manifest
+tar -cvzf GnmapFiles-$now.tar.gz --remove-files --files-from gnmap.manifest
 mv *.tar.gz ./Results-$now/
 ls Results-$now -latr | tail -n 10
 echo "Have fun !"
