@@ -25,9 +25,10 @@ echo "########Scan data can be found in gnx* files########"
 echo "############parsing Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
-bash ./gnmap-parser.sh -p ./Results-$now/gnmap-merged.gnmap
-mv Parsed-Results/ ./Results-$now/
-mv ./gnmap-parser.sh ./Results-$now/
+mv gnmap-parser.sh ./Results-$now
+cd Results-$now
+bash gnmap-parser.sh -p
+cd ..
 mv gnx* ./Results-$now/
 cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > ./Results-$now/Gnmap-LiveHosts.txt
 cat ./Results-$now/Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > ./Results-$now/Gnmap-OpenPorts.txt
