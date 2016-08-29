@@ -32,7 +32,7 @@ cd ..
 #mv gnx* ./Results-$now/
 cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > ./Results-$now/Gnmap-LiveHosts.txt
 cat ./Results-$now/Parsed-Results/Port-Lists/TCP-Ports-List.txt  | tr "\n" "," > ./Results-$now/Gnmap-OpenPorts.txt
-echo "#### Downloading nmapParse.sh####"
+echo "####Almost Done ! Compressing Files ...####"
 find . -maxdepth 1 -name '*.gnmap' -print >gnmap.manifest
 find . -maxdepth 1 -name '*.xml' -print >xml.manifest
 find . -maxdepth 1 -name '*.nmap' -print > nmap.manifest
