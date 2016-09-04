@@ -1,0 +1,5 @@
+#!/bin/bash
+#sets up distributed Scan environment 
+
+wget https://raw.githubusercontent.com/royharoush/rtools/master/json2csv.py -O /usr/bin/json2csv.py && chmod +x /usr/bin/json2csv.py
+apt-get install jq -y 
