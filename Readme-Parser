@@ -1,0 +1,12 @@
+In order to use the parser follow the below instructions 
+wget https://github.com/royharoush/rtools/blob/master/nmaParseClean.sh  && bash nmaParseClean.sh
+This process will do the following:
+1. downloading the required scripts.
+2. execute them and perform the following operations. 
+2.A. merge all the file t types (XML, Gnmap). 
+2.B. parse the information. 
+3.C. zip the files. 
+4. declare successful finish. 
+
+enjoy
+
