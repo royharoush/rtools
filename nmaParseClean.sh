@@ -11,15 +11,15 @@ echo    "########## Modified Gnmap-Parser is now Inside Your Directory #########
 echo ##### This can be used to remove files that don't have any open ports 
 echo #find -name '*.xml'   | xargs -I{} grep -LZ "state=\"open\"" {} | while IFS= read -rd '' x; do mv "$x" "$x".empty ; done 
 echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rename("$_", "$_.empty")'
-echo "I will now parse all your XMLs into one file called gnx-merged-$now.xml" 
-python gnxmerge.py -s ./  > gnx-merged-$now.xml
+echo "I will now parse all your XMLs into one file called XML-merged-$now.xml" 
+python gnxmerge.py -s ./  > XML-merged-$now.xml
 echo "I will now create the outputs of your scans from the XML file" 
-python gnxparse.py gnx-merged-$now.xml -i -p -s -r -c >c> gnx-output_all-$now.csv 
-python gnxparse.py gnx-merged-$now.xml -p >> ./Results-$now/gnx-Open-Ports.txt 
-python gnxparse.py gnx-merged-$now.xml -i >> ./Results-$now/gnx-Live-IPs.txt
-python gnxparse.py gnx-merged-$now.xml -s >> ./Results-$now/gnx-Subnets.txt
-python gnxparse.py gnx-merged-$now.xml -c >> ./Results-$now/gnx-Host-Ports-Matrix.csv  
-python gnxparse.py gnx-merged-$now.xml -r 'nmap -A ' >> ./Results-$now/gnx-suggested_scans-$now.sh
+python gnxparse.py XML-merged-$now.xml -i -p -s -r -c >c> XML-output_all-$now.csv 
+python gnxparse.py XML-merged-$now.xml -p >> ./Results-$now/XML-Open-Ports.txt 
+python gnxparse.py XML-merged-$now.xml -i >> ./Results-$now/XML-Live-IPs.txt
+python gnxparse.py XML-merged-$now.xml -s >> ./Results-$now/XML-Subnets.txt
+python gnxparse.py XML-merged-$now.xml -c >> ./Results-$now/XML-Host-Ports-Matrix.csv  
+python gnxparse.py XML-merged-$now.xml -r 'nmap -A ' >> ./Results-$now/gnx-suggested_scans-$now.sh
 echo "########All Done, Merged XML is in gnx-merged-$now.xml########"
 echo "########Scan data can be found in gnx* files########" 
 echo "############parsing Gnmap files##########"
