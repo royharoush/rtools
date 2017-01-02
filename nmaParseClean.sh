@@ -39,7 +39,7 @@ find . -maxdepth 1 -name '*.nmap' -print > nmap.manifest
 #tar -cvzf textfiles.tar.gz --files-from /tmp/test.manifest
 #find . -name '*.' | xargs rm -v
 tar -cvzf NmapFiles-$now.tar.gz --remove-files --files-from nmap.manifest
-tar -cvzf XMLFiles-$now.tar.gz --exclude='gnx-merged*'  --remove-files --files-from xml.manifest
+tar -cvzf XMLFiles-$now.tar.gz --exclude='XML-merged*'  --remove-files --files-from xml.manifest
 tar -cvzf GnmapFiles-$now.tar.gz --remove-files --files-from gnmap.manifest
 mv *.tar.gz ./Results-$now/
 ls Results-$now -latr | tail -n 10
