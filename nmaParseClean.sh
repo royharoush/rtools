@@ -3,6 +3,7 @@ echo    "########## Downloading GNX and gnmap-parser tools to this directory ###
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxmerge.py &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxparse.py &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnmap-parser.sh &> /dev/null
+wget https://raw.githubusercontent.com/maaaaz/nmaptocsv/master/nmaptocsv.py &> /dev/null
 now=$(date +"%d-%m-%y"-"%T" |tr ":" "-" | cut -d"-" -f1,2,3,4,5)
 mkdir Results-$now
 echo    "########## Download Complete ############"
@@ -22,12 +23,14 @@ python gnxparse.py XML-merged-$now.xml -c >> ./Results-$now/XML-Host-Ports-Matri
 python gnxparse.py XML-merged-$now.xml -r 'nmap -A ' >> ./Results-$now/gnx-suggested_scans-$now.sh
 echo "########All Done, Merged XML is in gnx-merged-$now.xml########"
 echo "########Scan data can be found in gnx* files########" 
-echo "############parsing Gnmap files##########"
+echo "############ merging Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
 mv gnmap-parser.sh ./Results-$now
 cd Results-$now
+python nmaptocsv.py  -i gnmap-merged.gnmap   -f ip-fqdn-port-protocol-service-version-os | grep -e tcp -e udp -e IP  | tr ";" ","  > gnmap-detailed.csv
 bash gnmap-parser.sh -p
+
 cd ..
 #mv gnx* ./Results-$now/
 cat ./Results-$now/Parsed-Results/Host-Lists/Alive-Hosts-Open-Ports.txt > ./Results-$now/Gnmap-LiveHosts.txt
