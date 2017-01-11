@@ -26,6 +26,7 @@ echo "########Scan data can be found in gnx* files########"
 echo "############ merging Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
+mv nmaptocsv.py ./Results-$now
 mv gnmap-parser.sh ./Results-$now
 cd Results-$now
 python nmaptocsv.py  -i gnmap-merged.gnmap   -f ip-fqdn-port-protocol-service-version-os | grep -e tcp -e udp -e IP  | tr ";" ","  > gnmap-detailed.csv
