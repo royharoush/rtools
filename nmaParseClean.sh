@@ -3,7 +3,7 @@ echo    "########## Downloading GNX and gnmap-parser tools to this directory ###
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxmerge.py &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxparse.py &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnmap-parser.sh &> /dev/null
-wget https://raw.githubusercontent.com/maaaaz/nmaptocsv/master/nmaptocsv.py &> /dev/null
+wget https://raw.githubusercontent.com/royharoush/rtools/master/nmap2csv.py.py &> /dev/null
 now=$(date +"%d-%m-%y"-"%T" |tr ":" "-" | cut -d"-" -f1,2,3,4,5)
 mkdir Results-$now
 echo    "########## Download Complete ############"
@@ -26,10 +26,10 @@ echo "########Scan data can be found in gnx* files########"
 echo "############ merging Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
-mv nmaptocsv.py ./Results-$now
+mv nmap2csv.py.py ./Results-$now
 mv gnmap-parser.sh ./Results-$now
 cd Results-$now
-python nmaptocsv.py  -i gnmap-merged.gnmap   -f ip-fqdn-port-protocol-service-version-os | grep -e tcp -e udp -e IP  | tr ";" ","  > gnmap-detailed.csv
+python nmap2csv.py.py  -i gnmap-merged.gnmap   -f ip-fqdn-port-protocol-service-version-os | grep -e tcp -e udp -e IP  | tr ";" ","  > gnmap-detailed.csv
 bash gnmap-parser.sh -p
 
 cd ..
