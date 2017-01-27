@@ -46,6 +46,7 @@ tar -cvzf NmapFiles-$now.tar.gz --remove-files --files-from nmap.manifest
 tar -cvzf XMLFiles-$now.tar.gz --exclude='XML-merged*'  --remove-files --files-from xml.manifest
 tar -cvzf GnmapFiles-$now.tar.gz --remove-files --files-from gnmap.manifest
 mv *.tar.gz ./Results-$now/
+mv  XML-merged-$now.xml ./Results-$now/
 ls Results-$now -latr | tail -n 10
 echo "Have fun !"
 
