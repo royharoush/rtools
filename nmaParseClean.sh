@@ -3,7 +3,7 @@ echo    "########## Downloading GNX and gnmap-parser tools to this directory ###
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxmerge.py &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxparse.py &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnmap-parser.sh &> /dev/null
-wget https://raw.githubusercontent.com/royharoush/rtools/master/nmap2csv.py.py &> /dev/null
+wget https://raw.githubusercontent.com/royharoush/rtools/master/nmap2csv.py &> /dev/null
 now=$(date +"%d-%m-%y"-"%T" |tr ":" "-" | cut -d"-" -f1,2,3,4,5)
 mkdir Results-$now
 echo    "########## Download Complete ############"
