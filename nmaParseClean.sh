@@ -14,7 +14,7 @@ echo #find -name '*.xml'   | xargs -I{} grep -LZ "state=\"open\"" {} | while IFS
 echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rename("$_", "$_.empty")'
 
 echo "Generating SQLite Database from only the XML files that contain live hosts" 
-wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.py
+wget https://raw.githubusercontent.com/royharoush/rtools/master/nmapdb.py
 wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.sql
 grep -r  --include \*.xml "state=\"open\""   | cut -d":" -f1 | sort -u  > livexml.manifest
 mkdir livexmlforsqlite
