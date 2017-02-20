@@ -1,7 +1,7 @@
 #!/bin/bash
 echo    "########## Downloading GNX and gnmap-parser tools to this directory ############"
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxmerge.py -O gnxmerge.py&> /dev/null
-wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxparse.py -O gnxparse.p &> /dev/null
+wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxparse.py -O gnxparse.py &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/gnmap-parser.sh -O gnmap-parser.sh &> /dev/null
 wget https://raw.githubusercontent.com/royharoush/rtools/master/nmap2csv.py -O nmap2csv.py &> /dev/null
 now=$(date +"%d-%m-%y"-"%T" |tr ":" "-" | cut -d"-" -f1,2,3,4,5)
