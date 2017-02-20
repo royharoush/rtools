@@ -120,7 +120,7 @@ def create_rescan_commands(nmap_results, nmap_rescan_cmd):
 				host_port_list.append(port.attrib['portid'])
 		
 		if host_port_list:
-			currentcommandline=nmap_rescan_cmd + " " + host_ip + ' -p' + ','.join(map(str,host_port_list)) + ' -oN ./' + host_ip + '.txt' + ' -oX ./' + host_ip + '.xml' 
+			currentcommandline=nmap_rescan_cmd + " " + host_ip + ' -p' + ','.join(map(str,host_port_list)) + ' -oA ./' + host_ip + '-rescanned -sVC' 
 			host_port_command_lines.append(currentcommandline)
 		if not host_port_command_lines:
 			host_port_command_lines.append("No open ports in scan results")
