@@ -1,9 +1,9 @@
 #!/bin/bash
 echo    "########## Downloading GNX and gnmap-parser tools to this directory ############"
-wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxmerge.py &> /dev/null
-wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxparse.py &> /dev/null
-wget https://raw.githubusercontent.com/royharoush/rtools/master/gnmap-parser.sh &> /dev/null
-wget https://raw.githubusercontent.com/royharoush/rtools/master/nmap2csv.py &> /dev/null
+wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxmerge.py -O gnxmerge.py&> /dev/null
+wget https://raw.githubusercontent.com/royharoush/rtools/master/gnxparse.py -O gnxparse.p &> /dev/null
+wget https://raw.githubusercontent.com/royharoush/rtools/master/gnmap-parser.sh -O gnmap-parser.sh &> /dev/null
+wget https://raw.githubusercontent.com/royharoush/rtools/master/nmap2csv.py -O nmap2csv.py &> /dev/null
 now=$(date +"%d-%m-%y"-"%T" |tr ":" "-" | cut -d"-" -f1,2,3,4,5)
 mkdir Results-$now
 echo    "########## Download Complete ############"
@@ -14,12 +14,13 @@ echo #find -name '*.xml'   | xargs -I{} grep -LZ "state=\"open\"" {} | while IFS
 echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rename("$_", "$_.empty")'
 
 echo "Generating SQLite Database from only the XML files that contain live hosts" 
-wget https://raw.githubusercontent.com/royharoush/rtools/master/nmapdb.py
-wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.sql
+wget https://raw.githubusercontent.com/royharoush/rtools/master/nmapdb.py -O nmapdb.py &> /dev/null
+wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.sql -O nmapdb.sql &> /dev/null
 grep -r  --include \*.xml "state=\"open\""   | cut -d":" -f1 | sort -u  > livexml.manifest
 mkdir livexmlforsqlite
 for i in $(cat livexml.manifest); do cp $i ./livexmlforsqlite/;done
 for i in $(ls livexmlforsqlite| xargs -I{} realpath {});do  python nmapdb.py -c nmapdb.sql -d SQLITE-Results-$now.db $i;done
+mv SQLITE-Results-$now.db ./Results-$now
 rm -rf livexmlforsqlite
 #######################################
 echo "I will now parse all your XMLs into one file called XML-merged-$now.xml" 
