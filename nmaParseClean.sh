@@ -12,6 +12,16 @@ echo    "########## Modified Gnmap-Parser is now Inside Your Directory #########
 echo ##### This can be used to remove files that don't have any open ports 
 echo #find -name '*.xml'   | xargs -I{} grep -LZ "state=\"open\"" {} | while IFS= read -rd '' x; do mv "$x" "$x".empty ; done 
 echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rename("$_", "$_.empty")'
+
+echo "Generating SQLite Database from only the XML files that contain live hosts" 
+wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.py
+wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.sql
+grep -r  --include \*.xml "state=\"open\""   | cut -d":" -f1 | sort -u  > livexml.manifest
+mkdir livexmlforsqlite
+for i in $(cat livexml.manifest); do cp $i ./livexmlforsqlite/;done
+for i in $(ls livexmlforsqlite| xargs -I{} realpath {});do  python nmapdb.py -c nmapdb.sql -d SQLITE-Results-$now.db $i;done
+rm -rf livexmlforsqlite
+#######################################
 echo "I will now parse all your XMLs into one file called XML-merged-$now.xml" 
 python gnxmerge.py -s ./  > XML-merged-$now.xml
 echo "I will now create the outputs of your scans from the XML file" 
