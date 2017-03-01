@@ -19,21 +19,23 @@ wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.sql -O nmapdb.s
 grep -r  --include \*.xml "state=\"open\""   | cut -d":" -f1 | sort -u  > livexml.manifest
 mkdir livexmlforsqlite
 for i in $(cat livexml.manifest); do cp $i ./livexmlforsqlite/;done
-for i in $(ls livexmlforsqlite| xargs -I{} realpath {});do  python nmapdb.py -c nmapdb.sql -d SQLITE-Results-$now.db $i;done
+rsync -v  --files-from=livexml.manifest ./  ./livexmlforsqlite/
+find ./livexmlforsqlite/ -name '*.xml'  -exec python nmapdb.py -c nmapdb.sql -d SQLITE-Results-$now.db {} \;
 mv SQLITE-Results-$now.db ./Results-$now
 rm -rf livexmlforsqlite
 #######################################
-echo "I will now parse all your XMLs into one file called XML-merged-$now.xml" 
-python gnxmerge.py -s ./  > XML-merged-$now.xml
-echo "I will now create the outputs of your scans from the XML file" 
+echo "Merging XML into XML-merged-$now.xml" 
+python gnxmerge.py -s ./livexmlforsqlite/  > XML-merged-$now.xml
+echo "Parsing Merged XML File" 
 python gnxparse.py XML-merged-$now.xml -i -p -s -r -c >c> XML-output_all-$now.csv 
-python gnxparse.py XML-merged-$now.xml -p >> ./Results-$now/XML-Open-Ports.txt 
+python gnxparse.py XML-merged-$now.xml -p >> ./Results-$now/XML-Open-Ports.txt
 python gnxparse.py XML-merged-$now.xml -i >> ./Results-$now/XML-Live-IPs.txt
 python gnxparse.py XML-merged-$now.xml -s >> ./Results-$now/XML-Subnets.txt
-python gnxparse.py XML-merged-$now.xml -c >> ./Results-$now/XML-Host-Ports-Matrix.csv  
+python gnxparse.py XML-merged-$now.xml -c >> ./Results-$now/XML-Host-Ports-Matrix.csv
 python gnxparse.py XML-merged-$now.xml -r 'nmap -Pn -n  ' >> ./Results-$now/gnx-suggested_scans-$now.sh
+rm -rf livexmlforsqlite
 echo "########All Done, Merged XML is in gnx-merged-$now.xml########"
-echo "########Scan data can be found in gnx* files########" 
+echo "########Scan data can be found in XML* files########" 
 echo "############ merging Gnmap files##########"
 find . -maxdepth 1 -type f -name '*.gnmap' -print0 |  sort -z |  xargs -0 cat -- >> ./Results-$now/gnmap-merged.gnmap
 echo "############parsing Gnmap files##########"
@@ -60,4 +62,3 @@ mv *.tar.gz ./Results-$now/
 mv  XML-merged-$now.xml ./Results-$now/
 ls Results-$now -latr | tail -n 10
 echo "Have fun !"
-
