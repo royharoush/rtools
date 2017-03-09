@@ -1,13 +1,5 @@
 #! /usr/bin/env python
-#  
-# DNmap Client - Edited by Justin Warner (@sixdub). Originally written by Sebastian Garcia
-# Orginal Copyright and license (included below) applies. 
-#
-# This is the client code to be used in conjunction with Minions.
-#
-#
-# DNmap Version Modified: .6
-# Copyright (C) 2009  Sebastian Garcia
+#  Copyright (C) 2009  Sebastian Garcia
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -29,6 +21,21 @@
 #
 # Based on code from Twisted examples.
 # Copyright (c) Twisted Matrix Laboratories.
+
+# Copyright (c) Twisted Matrix Laboratories.
+# See LICENSE for details.
+#
+# CHANGELOG
+# 0.6
+#  - Added some more chars to the command injection prevention.
+#  - Clients decide the nmap scanning rate.
+#  - If the server sends a --min-rate parameter, we now delete it. WE control the scan speed.
+#  - Clients decide the nmap scanning rate.
+#  - Exit if nmap is not installed
+#  - Stop sending the euid, it was a privacy violation. Now we just say if we are root or not.
+#
+# TODO
+# - privileges on nmap
 #
 
 try:
@@ -56,16 +63,13 @@ import random
 
 # Global variables
 server_ip = False
-server_port = 46001 
+server_port = 46001
 vernum = '0.6'
 # Your name alias defaults to anonymous
 alias='Anonymous'
 debug=False
 # Do not use a max rate by default
 maxrate = False
-
-base_dir = os.path.dirname(os.path.abspath(__file__))
-pemfile = os.path.join(base_dir,'client.pem')
 # End global variables
 
 
@@ -103,7 +107,6 @@ def usage():
   print "  -a, --alias      Your name alias so we can give credit to you for your help. Optional"
   print "  -d, --debug      Debuging."
   print "  -m, --max-rate      Force nmaps commands to use at most this rate. Useful to slow nmap down. Adds the --max-rate parameter."
- # print "  -P, --pemfile		The client certificate to be used. Must be signed by CA cert used by server"
   print
   sys.exit(1)
 
@@ -161,13 +164,10 @@ class NmapClient(LineReceiver):
 			print ' -- Line sent: {0}'.format(line)
 		self.sendLine(line)
 
-	
-
 	def dataReceived(self, line):
 		global debug
 		global client_id
 		global alias
-
 
 		# If a wait is received. just wait.
 		if 'Wait' in line:
@@ -175,7 +175,7 @@ class NmapClient(LineReceiver):
 			time.sleep(sleeptime)
 
 			# Ask for more
-			#line = 'Send more commands to Client ID:{0}:Alias:{1}:'.format(str(client_id),str(alias))
+			# line = 'Send more commands to Client ID:{0}:Alias:{1}:'.format(str(client_id),str(alias))
 			line = 'Send more commands'
 			if debug:
 				print ' -- Line sent: {0}'.format(line)
@@ -184,7 +184,7 @@ class NmapClient(LineReceiver):
 			# dataReceived does not wait for end of lines or CR nor LF
 			if debug:
 				print "\tCommand Received: {0}".format(line.strip('\n').strip('\r'))
-		
+
 			# A little bit of protection from the server
 			if check_clean(line):
 				# Store the nmap output file so we can send it to the server later
@@ -192,10 +192,9 @@ class NmapClient(LineReceiver):
 					nmap_output_file = line.split('-oA ')[1].split(' ')[0].strip(' ').strip("\n")
 				except IndexError:
 					random_file_name = str(random.randrange(0, 100000000, 1))
-					print '+ No -oA given. We add it anyway so not to lose the results. Added -oA '+random_file_name
-					line = line + '-oA '+random_file_name
+					print '+ No -oA given. We add it anyway so not to lose the results. Added -oA ' + random_file_name
+					line = line + '-oA ' + random_file_name
 					nmap_output_file = line.split('-oA ')[1].split(' ')[0].strip(' ').strip("\n")
-
 
 				try:
 					nmap_returncode = -1
@@ -217,7 +216,7 @@ class NmapClient(LineReceiver):
 
 					# Strip the command, so we can controll that only nmap is executed really
 					nmap_command = nmap_command[1:]
-					nmap_command.insert(0,'nmap')
+					nmap_command.insert(0, 'nmap')
 
 					# Recreate the final command to show it
 					nmap_command_string = ''
@@ -225,14 +224,13 @@ class NmapClient(LineReceiver):
 						nmap_command_string = nmap_command_string + i + ' '
 					print "\tCommand Executed: {0}".format(nmap_command_string)
 
-
 					# For some reason this executable thing does not work! seems to change nmap sP for sS
-					#nmap_process = Popen(nmap_command,executable='nmap',stdout=PIPE)
+					# nmap_process = Popen(nmap_command,executable='nmap',stdout=PIPE)
 
-					nmap_process = Popen(nmap_command,stdout=PIPE)
+					nmap_process = Popen(nmap_command, stdout=PIPE)
 					raw_nmap_output = nmap_process.communicate()[0]
 					nmap_returncode = nmap_process.returncode
-					
+
 				except OSError:
 					print 'You don\'t have nmap installed. You can install it with apt-get install nmap'
 					exit(-1)
@@ -248,27 +246,34 @@ class NmapClient(LineReceiver):
 					print inst.args
 					print inst
 
-
-
 				if nmap_returncode >= 0:
 					# Nmap ended ok and the files were created
-					if os.path.isfile(nmap_output_file+".xml") and os.path.isfile(nmap_output_file+".gnmap") and os.path.isfile(nmap_output_file+".nmap"):
-						with open(nmap_output_file+".xml","r") as f:
-							XMLData=f.read()
-						with open(nmap_output_file+".gnmap","r") as f:
-							GNmapData=f.read()
-						with open(nmap_output_file+".nmap","r") as f:
-							NmapData=f.read()
+					if os.path.isfile(nmap_output_file + ".xml") and os.path.isfile(
+									nmap_output_file + ".gnmap") and os.path.isfile(nmap_output_file + ".nmap"):
+						with open(nmap_output_file + ".xml", "r") as f:
+							XMLData = f.read()
+						with open(nmap_output_file + ".gnmap", "r") as f:
+							GNmapData = f.read()
+						with open(nmap_output_file + ".nmap", "r") as f:
+							NmapData = f.read()
 
-						xml_linesep="\r\n#XMLOUTPUT#\r\n"
-						gnmap_linesep="\r\n#GNMAPOUTPUT#\r\n"
+						xml_linesep = "\r\n#XMLOUTPUT#\r\n"
+						gnmap_linesep = "\r\n#GNMAPOUTPUT#\r\n"
+
 						# Tell the server that we are sending the nmap output
 						print '\tSending output to the server...'
 						line = 'Nmap Output File:{0}:'.format(nmap_output_file.strip('\n').strip('\r'))
 						if debug:
 							print ' -- Line sent: {0}'.format(line)
 						self.sendLine(line)
-						line =raw_nmap_output+xml_linesep+XMLData+gnmap_linesep+GNmapData
+						line = NmapData + xml_linesep + XMLData + gnmap_linesep + GNmapData
+						# line = raw_nmap_output + xml_linesep + XMLData + gnmap_linesep + GNmapData
+						print 'GNmapData: {}'.format(len(NmapData))
+						print 'xml_linesep: {}'.format(len(xml_linesep))
+						print 'XMLData: {}'.format(len(XMLData))
+						print 'gnmap_linesep: {}'.format(len(gnmap_linesep))
+						print 'GNmapData: {}'.format(len(GNmapData))
+
 						self.sendLine(line)
 						if debug:
 							print ' -- Line sent: {0}'.format(line)
@@ -285,7 +290,7 @@ class NmapClient(LineReceiver):
 						# Ask for another command.
 						# 'Client ID' text must be sent to receive another command
 						print 'Waiting for more commands....'
-						#line = 'Send more commands to Client ID:{0}:Alias:{1}:'.format(str(client_id),str(alias))
+						# line = 'Send more commands to Client ID:{0}:Alias:{1}:'.format(str(client_id),str(alias))
 						line = 'Send more commands'
 						if debug:
 							print ' -- Line sent: {0}'.format(line)
@@ -298,8 +303,6 @@ class NmapClient(LineReceiver):
 				if debug:
 					print ' -- Line sent: {0}'.format(line)
 				self.sendLine(line)
-
-
 
 
 class NmapClientFactory(ReconnectingClientFactory):
@@ -350,6 +353,7 @@ def process_commands():
 		factory.maxDelay = 10
 
 		reactor.connectSSL(str(server_ip), int(server_port), factory, ssl.ClientContextFactory())
+		#reactor.addSystemEventTrigger('before','shutdown',myCleanUpFunction)
 		reactor.run()
 	except Exception as inst:
 		print 'Problem in process_commands function'
@@ -365,18 +369,20 @@ def main():
 	global alias
 	global debug
 	global maxrate
-#	global pemfile
 
 	try:
-		opts, args = getopt.getopt(sys.argv[1:], "a:dm:p:s:P:", ["server-ip=","server-port","max-rate","alias=","debug","pemfile="])
+		opts, args = getopt.getopt(sys.argv[1:], "a:dm:p:s:", ["server-ip=","server-port","max-rate","alias=","debug"])
 	except getopt.GetoptError: usage()
 
 	for opt, arg in opts:
-		if opt in ("-s", "--server-ip"): server_ip=str(arg)
-		if opt in ("-p", "--server-port"): server_port=arg
-		if opt in ("-a", "--alias"): alias=str(arg).strip('\n').strip('\r').strip(' ')
-		if opt in ("-d", "--debug"): debug=True
-		if opt in ("-m", "--max-rate"): maxrate=str(arg)
+	    if opt in ("-s", "--server-ip"): server_ip=str(arg)
+	    if opt in ("-p", "--server-port"): server_port=arg
+	    if opt in ("-a", "--alias"): alias=str(arg).strip('\n').strip('\r').strip(' ')
+	    if opt in ("-d", "--debug"): debug=True
+	    if opt in ("-m", "--max-rate"): maxrate=str(arg)
+
+	try:
+
 		if server_ip and server_port:
 
 			version()
@@ -386,12 +392,13 @@ def main():
 
 		else:
 			usage()
-	
+
+
+	except KeyboardInterrupt:
 		# CTRL-C pretty handling.
 		print "Keyboard Interruption!. Exiting."
 		sys.exit(1)
 
 
-
 if __name__ == '__main__':
-	main()
+    main()
