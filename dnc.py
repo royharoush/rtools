@@ -326,18 +326,6 @@ class NmapClientFactory(ReconnectingClientFactory):
 		print inst.args
 		print inst
 
-class CtxFactory(ssl.ClientContextFactory):
-	def getContext(self):
-		self.method = SSL.SSLv23_METHOD
-		ctx = ssl.ClientContextFactory.getContext(self)
-		
-		try:
-			ctx.use_certificate_file(pemfile)
-			ctx.use_privatekey_file(pemfile)
-		except:
-			print 'You need to have a client.pem'
-
-		return ctx
 
 
 
@@ -362,9 +350,6 @@ def process_commands():
 		factory.maxDelay = 10
 
 		reactor.connectSSL(str(server_ip), int(server_port), factory, ssl.ClientContextFactory())
-#		reactor.connectSSL(str(server_ip), int(server_port), factory, CtxFactory())
-#		reactor.connectSSL(str(server_ip), int(server_port), factory, CtxFactory())
-		#reactor.addSystemEventTrigger('before','shutdown',myCleanUpFunction)
 		reactor.run()
 	except Exception as inst:
 		print 'Problem in process_commands function'
@@ -392,7 +377,6 @@ def main():
 		if opt in ("-a", "--alias"): alias=str(arg).strip('\n').strip('\r').strip(' ')
 		if opt in ("-d", "--debug"): debug=True
 		if opt in ("-m", "--max-rate"): maxrate=str(arg)
-	#	if opt in ("-P", "--pemfile"): pemfile=str(arg)
 		if server_ip and server_port:
 
 			version()
@@ -402,10 +386,11 @@ def main():
 
 		else:
 			usage()
-
+	
 		# CTRL-C pretty handling.
 		print "Keyboard Interruption!. Exiting."
 		sys.exit(1)
+
 
 
 if __name__ == '__main__':
