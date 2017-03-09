@@ -22,7 +22,7 @@ for i in $(cat livexml.manifest); do cp $i ./livexmlforsqlite/;done
 rsync -v  --files-from=livexml.manifest ./  ./livexmlforsqlite/
 find ./livexmlforsqlite/ -name '*.xml'  -exec python nmapdb.py -c nmapdb.sql -d SQLITE-Results-$now.db {} \;
 mv SQLITE-Results-$now.db ./Results-$now
-rm -rf livexmlforsqlite
+#rm -rf livexmlforsqlite
 #######################################
 echo "Merging XML into XML-merged-$now.xml" 
 python gnxmerge.py -s ./livexmlforsqlite/  > XML-merged-$now.xml
@@ -33,7 +33,7 @@ python gnxparse.py XML-merged-$now.xml -i >> ./Results-$now/XML-Live-IPs.txt
 python gnxparse.py XML-merged-$now.xml -s >> ./Results-$now/XML-Subnets.txt
 python gnxparse.py XML-merged-$now.xml -c >> ./Results-$now/XML-Host-Ports-Matrix.csv
 python gnxparse.py XML-merged-$now.xml -r 'nmap -Pn -n  ' >> ./Results-$now/gnx-suggested_scans-$now.sh
-rm -rf livexmlforsqlite
+#rm -rf livexmlforsqlite
 echo "########All Done, Merged XML is in gnx-merged-$now.xml########"
 echo "########Scan data can be found in XML* files########" 
 echo "############ merging Gnmap files##########"
