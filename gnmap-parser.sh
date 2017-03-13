@@ -9,7 +9,7 @@ hostldir=${parsedir}/Host-Lists
 hosttype=${parsedir}/Host-Type
 thrdprty=${parsedir}/Third-Party
 ipsorter='sort -n -u -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4'
-whatport='/bin/cat /usr/share/nmap/nmap-services |  /usr/bin/tr -s "/" " "  | /usr/bin/tr '\t' ' ' | /usr/bin/cut -d" " -f1,2,3 | /bin/grep -i tcp | /bin/grep -w $1'
+#whatport='/bin/cat /usr/share/nmap/nmap-services |  /usr/bin/tr -s "/" " "  | /usr/bin/tr '\t' ' ' | /usr/bin/cut -d" " -f1,2,3 | /bin/grep -i tcp | /bin/grep -w $1'
 
 # Title Function
 func_title(){
