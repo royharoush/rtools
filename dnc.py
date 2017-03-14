@@ -350,7 +350,7 @@ def process_commands():
 
 		factory = NmapClientFactory()
 		# Do not wait more that 10 seconds between reconnections
-		factory.maxDelay = 10
+		factory.maxDelay = 2
 
 		reactor.connectSSL(str(server_ip), int(server_port), factory, ssl.ClientContextFactory())
 		#reactor.addSystemEventTrigger('before','shutdown',myCleanUpFunction)
