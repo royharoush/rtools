@@ -1,0 +1,3 @@
+#!/bin/bash
+for i in $(find /opt/wlist -maxdepth 1  ); do git -C $i pull   ; done 
+echo "finished updating" 
