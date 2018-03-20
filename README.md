@@ -3,5 +3,4 @@ This is a repo for my pentest tools, supported by git submodule, as well as some
 
 #quick installation
 
-```git clone https://github.com/royharoush/rtools.git```
-```git submodule update --init --recursive```
+```git clone https://github.com/royharoush/rtools.git  git submodule update --init --recursive```
