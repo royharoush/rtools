@@ -1,4 +1,4 @@
-apt-get install tmux  -y --force-yes --assume-yes
+apt-get install tmux git  -y --force-yes --assume-yes
 wget https://raw.githubusercontent.com/royharoush/rtools/master/.tmux.conf -O /root/.tmux.conf
 git clone https://github.com/tmux-plugins/tmux-resurrect ~/tmux-plugins/tmux-resurrect
 git clone https://github.com/tmux-plugins/tmux-sensible.git ~/tmux-plugins/plugins/tmux-sensible
