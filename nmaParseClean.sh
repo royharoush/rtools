@@ -12,7 +12,7 @@ echo    "########## Modified Gnmap-Parser is now Inside Your Directory #########
 echo ##### This can be used to remove files that don't have any open ports 
 echo #find -name '*.xml'   | xargs -I{} grep -LZ "state=\"open\"" {} | while IFS= read -rd '' x; do mv "$x" "$x".empty ; done 
 echo #find -name '*.xml' -exec grep -LZ "state=\"open\"" {} + |  perl -n0e 'rename("$_", "$_.empty")'
-
+echo textfiles
 echo "Generating SQLite Database from only the XML files that contain live hosts" 
 wget https://raw.githubusercontent.com/royharoush/rtools/master/nmapdb.py -O nmapdb.py &> /dev/null
 wget https://raw.githubusercontent.com/argp/nmapdb/master/nmapdb.sql -O nmapdb.sql &> /dev/null
